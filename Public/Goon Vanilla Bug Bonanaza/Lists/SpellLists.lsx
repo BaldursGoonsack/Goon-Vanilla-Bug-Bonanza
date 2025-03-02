@@ -6,8 +6,18 @@
             <children>
                 <node id="SpellList">
                     <attribute id="Name" type="FixedString" value="Produce Flame Cantrip"/>
-                    <attribute id="Spells" type="LSString" value="Shout_ProduceFlame_Asmodeus_Tiefling"/>
+                    <attribute id="Spells" type="LSString" value="Shout_ProduceFlame_AsmodeusTiefling"/>
                     <attribute id="UUID" type="guid" value="a3366430-2f63-495c-be14-408d9facfd3b"/>
+                </node>
+                <node id="SpellList">
+                    <attribute id="Name" type="FixedString" value="Magic Initiate Sorceror"/>
+                    <attribute id="Spells" type="LSString" value="Projectile_ChromaticOrb;Target_FogCloud;Target_CharmPerson;Target_Sleep;Shout_Shield_SorcererMI;Zone_BurningHands;Projectile_MagicMissile;Target_MageArmor;Zone_Thunderwave;Projectile_WitchBolt;Zone_ColorSpray;Shout_DisguiseSelf;Shout_FalseLife;Projectile_RayOfSickness;Shout_ExpeditiousRetreat;Shout_FeatherFall;Target_Jump"/>
+                    <attribute id="UUID" type="guid" value="2a6a30f4-8b38-4b77-bc74-ac701bba91c6"/>
+                </node>
+                <node id="SpellList">
+                    <attribute id="Name" type="FixedString" value="Magic Initiate Wizard"/>
+                    <attribute id="Spells" type="LSString" value="Zone_BurningHands;Target_CharmPerson;Projectile_ChromaticOrb;Zone_ColorSpray;Shout_DisguiseSelf;Shout_ExpeditiousRetreat;Shout_FalseLife;Shout_FeatherFall;Target_FindFamiliar;Target_FogCloud;Target_Grease;Projectile_IceKnife;Target_Jump;Target_Longstrider;Target_MageArmor;Projectile_MagicMissile;Target_ProtectionFromEvilAndGood;Projectile_RayOfSickness;Shout_Shield_WizardMI;Target_Sleep;Target_HideousLaughter;Zone_Thunderwave;Projectile_WitchBolt"/>
+                    <attribute id="UUID" type="guid" value="db7e3a14-0cb4-47f0-ac80-8b84f56142fa"/>
                 </node>
             </children>
         </node>

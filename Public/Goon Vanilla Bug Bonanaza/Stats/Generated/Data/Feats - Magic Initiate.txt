@@ -1,0 +1,26 @@
+// ==================================== Magic Initiate: Sorcerer & Magic Initiate: Wizard - Custom entries to replicate appropriate vanilla implementation for Magic Initiate spells ====================================
+// Handled differently in "Feats Overhaul" by Cahoot
+
+new entry "Interrupt_Shield_WizardMI"
+type "InterruptData"
+using "Interrupt_Shield_Wizard"
+data "Cost" "ReactionActionPoint:1;Interrupt_ShieldWizardMI_Charge:1"
+data "EnableCondition" "HasActionResource('Interrupt_ShieldWizardMI_Charge', 1, 0, false, false, context.Source) and (not HasStatus('SG_Polymorph') or Tagged('MINDFLAYER') or HasStatus('SG_Disguise'))"
+data "EnableContext" "OnStatusApplied;OnStatusRemoved;OnActionResourcesChanged"
+
+new entry "Interrupt_Shield_SorcererMI"
+type "InterruptData"
+using "Interrupt_Shield_Sorcerer"
+data "Cost" "ReactionActionPoint:1;Interrupt_ShieldSorcererMI_Charge:1"
+data "EnableCondition" "HasActionResource('Interrupt_ShieldSorcererMI_Charge', 1, 0, false, false, context.Source) and (not HasStatus('SG_Polymorph') or Tagged('MINDFLAYER') or HasStatus('SG_Disguise'))"
+data "EnableContext" "OnStatusApplied;OnStatusRemoved;OnActionResourcesChanged"
+
+new entry "MagicInitiate_Wizard"
+type "PassiveData"
+using "MagicInitiate_Wizard"
+data "Boosts" "ActionResourceOverride(Interrupt_ShieldWizardMI_Charge,1,0)"
+
+new entry "MagicInitiate_Sorcerer"
+type "PassiveData"
+using "MagicInitiate_Sorcerer"
+data "Boosts" "ActionResourceOverride(Interrupt_ShieldSorcererMI_Charge,1,0)"

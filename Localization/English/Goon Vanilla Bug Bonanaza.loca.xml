@@ -9,4 +9,7 @@
 	<content contentuid="h6ca2e957g948dg448dgb7cfg748bfd1293c2" version="1">Spew forth a column of lightning.</content>
 	<!--Sussur weapons-->
 	<content contentuid="hb51441aag0602g4421g8b9cg27b31a9a781c" version="1">Targets hit with this weapon must succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; or become &lt;LSTag Type="Status" Tooltip="SILENCED"&gt;Silenced&lt;/LSTag&gt; for 2 turns.</content>
+	<!--Gloves of Battlemage's Power-->
+	<content contentuid="h523e0454g6b73gb985g37bbgdc61a1118438" version="1">%%% OnAttack Technical</content>
+	<content contentuid="hd8cfd152g848cgfb39g8bd4gb36d2b6958c9" version="1">%%% OnStatusApply Technical</content>
 </contentList>

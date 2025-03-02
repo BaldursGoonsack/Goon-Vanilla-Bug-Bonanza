@@ -12,4 +12,6 @@
 	<!--Gloves of Battlemage's Power-->
 	<content contentuid="h523e0454g6b73gb985g37bbgdc61a1118438" version="1">%%% OnAttack Technical</content>
 	<content contentuid="hd8cfd152g848cgfb39g8bd4gb36d2b6958c9" version="1">%%% OnStatusApply Technical</content>
+	<!--Polearm Master-->
+	<content contentuid="h37243ce1g518bg414bgbdecg27316e68ed34" version="1">When attacking with a glaive, halberd, pike, quarterstaff, or spear, you can use a &lt;LSTag Type="ActionResource" Tooltip="BonusActionPoint"&gt;bonus action&lt;/LSTag&gt; to attack with the butt of your weapon.&lt;br&gt;&lt;br&gt;You can also make an &lt;LSTag Tooltip="OpportunityAttack"&gt;Opportunity Attack&lt;/LSTag&gt; when a target comes within range.</content>
 </contentList>

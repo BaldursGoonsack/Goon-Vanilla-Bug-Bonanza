@@ -5,8 +5,10 @@
         <node id="root">
             <children>
                 <node id="FeatDescription">
-                    <attribute id="Description" type="TranslatedString" handle="h0d8877ccgfad9g061ag1ee6gf3fc87516c32" version="1"/>
-                    <attribute id="DisplayName" type="TranslatedString" handle="hb5bac246g87c3g3cdagda2cg434f18977871" version="1"/>
+                    <!--Polearm Master - References pikes in the description-->
+                    <!--<attribute id="Description" type="TranslatedString" handle="hc87a7293g3b25g406bg99e4gbb91dc138e9b" version="3"/>-->
+                    <attribute id="Description" type="TranslatedString" handle="h37243ce1g518bg414bgbdecg27316e68ed34" version="1"/>
+                    <attribute id="DisplayName" type="TranslatedString" handle="ha7c4e2fag1168g4275g9cadg5038645ea85f" version="1"/>
                     <attribute id="ExactMatch" type="FixedString" value="PolearmMaster"/>
                     <attribute id="FeatId" type="guid" value="fdf0be80-cc1e-4501-bd2e-7a1ea737362c"/>
                     <attribute id="UUID" type="guid" value="9f9e19ea-117e-4717-acd8-9370e9956d07"/>

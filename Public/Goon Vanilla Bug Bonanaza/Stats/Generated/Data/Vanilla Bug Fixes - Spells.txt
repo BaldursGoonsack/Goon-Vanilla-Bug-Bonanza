@@ -270,7 +270,7 @@ using "MOONBEAM_OWNER_9"
 // data "Boosts" "UnlockSpell(Target_Moonbeam_Move_9,,,,Wisdom)"
 data "Boosts" "UnlockSpell(Target_Moonbeam_Move_9)"
 
-// ==================================== Elemental Weapon - Only gets a +1 attack roll bonus and not a +1 damage bonus, per the description / Upcasting now works ====================================
+// ==================================== Elemental Weapon - Only gets a +1 attack roll bonus and not a +1 damage bonus, per the description / Upcasting now works, vanilla entries simply did not exist ====================================
 
 new entry "ELEMENTAL_WEAPON_ACID"
 type "StatusData"
@@ -375,30 +375,6 @@ data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:5"
 data "RootSpellID" "Target_ElementalWeapon_Cold"
 data "PowerLevel" "5"
 
-new entry "Target_ElementalWeapon_Fire_5"
-type "SpellData"
-data "SpellType" "Target"
-using "Target_ElementalWeapon_Fire"
-data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:5"
-data "RootSpellID" "Target_ElementalWeapon_Fire"
-data "PowerLevel" "5"
-
-
-
-new entry "Target_ElementalWeapon_Lightning_5"
-type "SpellData"
-data "SpellType" "Target"
-using "Target_ElementalWeapon_Lightning"
-data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:5"
-data "RootSpellID" "Target_ElementalWeapon_Lightning"
-data "PowerLevel" "5"
-
-
-
-
-
-
-
 new entry "Target_ElementalWeapon_Cold_6"
 type "SpellData"
 data "SpellType" "Target"
@@ -407,7 +383,46 @@ data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:6"
 data "RootSpellID" "Target_ElementalWeapon_Cold"
 data "PowerLevel" "6"
 
+new entry "Target_ElementalWeapon_Cold_7"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ElementalWeapon_Cold"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:7"
+data "RootSpellID" "Target_ElementalWeapon_Cold"
+data "PowerLevel" "7"
 
+new entry "Target_ElementalWeapon_Cold_8"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ElementalWeapon_Cold"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:8"
+data "RootSpellID" "Target_ElementalWeapon_Cold"
+data "PowerLevel" "8"
+
+new entry "Target_ElementalWeapon_Cold_9"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ElementalWeapon_Cold"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:9"
+data "RootSpellID" "Target_ElementalWeapon_Cold"
+data "PowerLevel" "9"
+
+// new entry "Target_ElementalWeapon_Fire_4"
+// type "SpellData"
+// data "SpellType" "Target"
+// using "Target_ElementalWeapon_Fire"
+// data "DescriptionParams" "DealDamage(1d4,Fire)"
+// data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:4"
+// data "RootSpellID" "Target_ElementalWeapon_Fire"
+// data "PowerLevel" "4"
+
+new entry "Target_ElementalWeapon_Fire_5"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ElementalWeapon_Fire"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:5"
+data "RootSpellID" "Target_ElementalWeapon_Fire"
+data "PowerLevel" "5"
 
 new entry "Target_ElementalWeapon_Fire_6"
 type "SpellData"
@@ -417,7 +432,45 @@ data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:6"
 data "RootSpellID" "Target_ElementalWeapon_Fire"
 data "PowerLevel" "6"
 
+new entry "Target_ElementalWeapon_Fire_7"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ElementalWeapon_Fire"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:7"
+data "RootSpellID" "Target_ElementalWeapon_Fire"
+data "PowerLevel" "7"
 
+new entry "Target_ElementalWeapon_Fire_8"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ElementalWeapon_Fire"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:8"
+data "RootSpellID" "Target_ElementalWeapon_Fire"
+data "PowerLevel" "8"
+
+new entry "Target_ElementalWeapon_Fire_9"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ElementalWeapon_Fire"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:9"
+data "RootSpellID" "Target_ElementalWeapon_Fire"
+data "PowerLevel" "9"
+
+// new entry "Target_ElementalWeapon_Lightning_4"
+// type "SpellData"
+// data "SpellType" "Target"
+// using "Target_ElementalWeapon_Lightning"
+// data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:4"
+// data "RootSpellID" "Target_ElementalWeapon_Lightning"
+// data "PowerLevel" "4"
+
+new entry "Target_ElementalWeapon_Lightning_5"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ElementalWeapon_Lightning"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:5"
+data "RootSpellID" "Target_ElementalWeapon_Lightning"
+data "PowerLevel" "5"
 
 new entry "Target_ElementalWeapon_Lightning_6"
 type "SpellData"
@@ -427,11 +480,29 @@ data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:6"
 data "RootSpellID" "Target_ElementalWeapon_Lightning"
 data "PowerLevel" "6"
 
+new entry "Target_ElementalWeapon_Lightning_7"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ElementalWeapon_Lightning"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:7"
+data "RootSpellID" "Target_ElementalWeapon_Lightning"
+data "PowerLevel" "7"
 
+new entry "Target_ElementalWeapon_Lightning_8"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ElementalWeapon_Lightning"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:8"
+data "RootSpellID" "Target_ElementalWeapon_Lightning"
+data "PowerLevel" "8"
 
-
-
-
+new entry "Target_ElementalWeapon_Lightning_9"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_ElementalWeapon_Lightning"
+data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:9"
+data "RootSpellID" "Target_ElementalWeapon_Lightning"
+data "PowerLevel" "9"
 
 // ==================================== Sunbeam (recast) - The last spellcasting ability obtained during level up will not be used inappropriately ====================================
 

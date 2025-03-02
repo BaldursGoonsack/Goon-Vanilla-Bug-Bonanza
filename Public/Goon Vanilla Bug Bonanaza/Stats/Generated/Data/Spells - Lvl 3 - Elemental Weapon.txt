@@ -231,4 +231,3 @@ using "Target_ElementalWeapon_Lightning"
 data "UseCosts" "ActionPoint:1;SpellSlotsGroup:1:1:9"
 data "RootSpellID" "Target_ElementalWeapon_Lightning"
 data "PowerLevel" "9"
-

@@ -1,3 +1,24 @@
+// ==================================== Slashing Flourish (Melee) - Fix to tooltip damage not correctly stating Bardic Inspiration bonus (Credit to zero3042 - Bard Fixes and Tweaks) ====================================
+
+new entry "Zone_BladeFlourish_Slashing"
+type "SpellData"
+data "SpellType" "Zone"
+// using "Zone_Cleave"
+using "Zone_BladeFlourish_Slashing"
+// data "TooltipDamageList" "DealDamage(MainMeleeWeapon+1d6, MainWeaponDamageType)"
+data "TooltipDamageList" "DealDamage(MainMeleeWeapon + LevelMapValue(BardicInspiration), MainMeleeWeaponDamageType)"
+
+// ==================================== Slashing Flourish (Ranged) - Fix to target selection allowing the same target to be picked twice (Credit to Rydiak - Item and Spell Bug Fixes - Mod.io) ====================================
+// Is this really a bug fix, and not just a rebalance?
+
+new entry "Projectile_BladeFlourish_Slashing"
+type "SpellData"
+data "SpellType" "Projectile"
+// using "Projectile_MainHandAttack"
+using "Projectile_BladeFlourish_Slashing"
+// data "SpellFlags" "HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold;IsHarmful"
+data "SpellFlags" "HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold;IsHarmful;IgnorePreviouslyPickedEntities"
+
 // ==================================== Heart of the Storm - Fix to the effect functioning with cantrips (Credit to JuuM) ====================================
 
 new entry "Interrupt_HeartOfTheStorm_Lightning"

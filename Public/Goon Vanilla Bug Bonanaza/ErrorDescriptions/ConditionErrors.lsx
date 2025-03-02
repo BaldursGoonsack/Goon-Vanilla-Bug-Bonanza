@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+    <version major="4" minor="7" revision="1" build="3"/>
+    <region id="ConditionErrors">
+        <node id="root">
+            <children>
+                <!--Magic Initiate: Sorcerer & Magic Initiate: Wizard - Custom entries to replicate appropriate vanilla implementation for Magic Initiate spells-->
+                <node id="ConditionErrors">
+                    <attribute id="DisplayName" type="TranslatedString" handle="hb8db7ebbg4af8g4330g8709gac9fa875fd9e" version="1"/>
+                    <attribute id="ErrorDescriptionType" type="uint8" value="0"/>
+                    <attribute id="Identifier" type="FixedString" value="CE_ActionResource_Interrupt_ShieldWizardMI_Charge_False"/>
+                    <attribute id="UUID" type="guid" value="35842962-960a-4d77-a660-dcf610981d7e"/>
+                </node>
+                <node id="ConditionErrors">
+                    <attribute id="DisplayName" type="TranslatedString" handle="hb8db7ebbg4af8g4330g8709gac9fa875fd9e" version="1"/>
+                    <attribute id="ErrorDescriptionType" type="uint8" value="0"/>
+                    <attribute id="Identifier" type="FixedString" value="CE_ActionResource_Interrupt_ShieldSorcererMI_Charge_False"/>
+                    <attribute id="UUID" type="guid" value="3b158c4e-8bae-4320-9a09-963197ad1f03"/>
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

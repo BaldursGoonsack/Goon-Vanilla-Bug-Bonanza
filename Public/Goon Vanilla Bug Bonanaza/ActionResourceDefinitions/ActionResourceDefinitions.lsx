@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+    <version major="4" minor="7" revision="1" build="3"/>
+    <region id="ActionResourceDefinitions">
+        <node id="root">
+            <children>
+                <!--Magic Initiate: Sorcerer & Magic Initiate: Wizard - Custom entries to replicate appropriate vanilla implementation for Magic Initiate spells-->
+                <node id="ActionResourceDefinition">
+                    <attribute id="DisplayName" type="TranslatedString" handle="h7ff68094g5f40g0040g62e9g45fcf8fd4bca" version="1"/>
+                    <attribute id="IsHidden" type="bool" value="true"/>
+                    <attribute id="Name" type="FixedString" value="Interrupt_ShieldWizardMI_Charge"/>
+                    <attribute id="ReplenishType" type="FixedString" value="Rest"/>
+                    <attribute id="ShowOnActionResourcePanel" type="bool" value="false"/>
+                    <attribute id="UUID" type="guid" value="55d0f5e2-a46e-4aa0-a11b-23efeec62d31"/>
+                </node>
+                <node id="ActionResourceDefinition">
+                    <attribute id="DisplayName" type="TranslatedString" handle="hf9c3c052gf94dg8ec7gd912g4dc7bdf3727e" version="1"/>
+                    <attribute id="IsHidden" type="bool" value="true"/>
+                    <attribute id="Name" type="FixedString" value="Interrupt_ShieldSorcererMI_Charge"/>
+                    <attribute id="ReplenishType" type="FixedString" value="Rest"/>
+                    <attribute id="ShowOnActionResourcePanel" type="bool" value="false"/>
+                    <attribute id="UUID" type="guid" value="94583c74-8a9b-4167-a020-2362962de8b5"/>
+                </node>
+                <!---->
+                <node id="ActionResourceDefinition">
+                    <attribute id="DisplayName" type="TranslatedString" handle="h1a54db9fgc949gbe97g4d17ga923a482429b" version="1"/>
+                    <attribute id="IsHidden" type="bool" value="true"/>
+                    <attribute id="Name" type="FixedString" value="Interrupt_AbsorbElements"/>
+                    <attribute id="ReplenishType" type="FixedString" value="ShortRest"/>
+                    <attribute id="UUID" type="guid" value="6275ca19-95d9-469c-a649-b26f990882fa"/>
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

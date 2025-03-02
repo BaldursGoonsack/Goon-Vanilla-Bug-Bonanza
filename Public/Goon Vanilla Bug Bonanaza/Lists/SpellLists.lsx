@@ -10,6 +10,7 @@
                     <attribute id="Spells" type="LSString" value="Shout_ProduceFlame_AsmodeusTiefling"/>
                     <attribute id="UUID" type="guid" value="a3366430-2f63-495c-be14-408d9facfd3b"/>
                 </node>
+                <!--Magic Initiate: Sorcerer & Magic Initiate: Wizard - Custom entries to replicate appropriate vanilla implementation for Magic Initiate spells-->
                 <node id="SpellList">
                     <attribute id="Name" type="FixedString" value="Sorcerer SLevel 1 expanded MI"/>
                     <attribute id="Spells" type="LSString" value="Projectile_ChromaticOrb;Target_FogCloud;Target_CharmPerson;Target_Sleep;Shout_Shield_SorcererMI;Zone_BurningHands;Projectile_MagicMissile;Target_MageArmor;Zone_Thunderwave;Projectile_WitchBolt;Zone_ColorSpray;Shout_DisguiseSelf;Shout_FalseLife;Projectile_RayOfSickness;Shout_ExpeditiousRetreat;Shout_FeatherFall;Target_Jump"/>

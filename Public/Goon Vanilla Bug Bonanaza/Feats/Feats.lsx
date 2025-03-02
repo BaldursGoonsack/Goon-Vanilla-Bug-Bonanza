@@ -4,6 +4,7 @@
     <region id="Feats">
         <node id="root">
             <children>
+                <!--Magic Initiate: Sorcerer & Magic Initiate: Wizard - Custom entries to replicate appropriate vanilla implementation for Magic Initiate spells-->
                 <node id="Feat">
                     <attribute id="Name" type="FixedString" value="MagicInitiateSorcerer"/>
                     <attribute id="PassivesAdded" type="LSString" value="MagicInitiate_Sorcerer"/>

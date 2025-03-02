@@ -1,4 +1,5 @@
 // ==================================== Elemental Weapon - Only gets a +1 attack roll bonus and not a +1 damage bonus, per the description / Upcasting now works, vanilla entries simply did not exist ====================================
+// 5e RAW scaling should be added instead of nothing
 
 new entry "ELEMENTAL_WEAPON_ACID"
 type "StatusData"

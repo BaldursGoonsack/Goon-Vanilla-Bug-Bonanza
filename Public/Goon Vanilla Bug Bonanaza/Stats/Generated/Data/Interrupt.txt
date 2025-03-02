@@ -1,0 +1,47 @@
+
+
+new entry "Interrupt_StormsFury"
+type "InterruptData"
+using "Interrupt_StormsFury"
+data "Description" "h09fe7d51g94fag1d7egc218g3bdf146cc638;1"
+data "Icon" "GenericIcon_DamageType_Lightning"
+
+new entry "Interrupt_RingOfEvasion"
+type "InterruptData"
+using "Interrupt_RingOfEvasion"
+data "Description" "h3545851eg7cb2g18ebg660ageb195fe04d8a;1"
+
+new entry "Interrupt_DefensiveDuelist"
+type "InterruptData"
+using "Interrupt_DefensiveDuelist"
+data "Description" "h31c74916gbb37g869dgc6b2gbf887f9e9316;1"
+data "EnableCondition" "WieldingFinesseWeaponInSpecificHand(context.Source, false) and (not HasStatus('SG_Polymorph') or Tagged('MINDFLAYER') or HasStatus('SG_Disguise'))"
+
+new entry "Interrupt_ShieldBlow"
+type "InterruptData"
+using "Interrupt_ShieldBlow"
+data "Description" "h1ab732d5ge60fg54bag2940g40124bf5d73e;1"
+
+new entry "Interrupt_Legendary_ShieldBlow"
+type "InterruptData"
+using "Interrupt_Legendary_ShieldBlow"
+data "Description" "h5410ed5eg0af3g17a5gb97fg189c10828842;1"
+data "ExtraDescription" "h80fda0adg9d27g7aadg1ca9gb4d309054897;1"
+
+new entry "Interrupt_PolearmMaster"
+type "InterruptData"
+using "Interrupt_PolearmMaster"
+data "ExtraDescription" "h40f3c783g24bfg17d3g980dg6e4ed809d016;1"
+
+new entry "Interrupt_Legendary_SoulCatching_Heal"
+type "InterruptData"
+using "Interrupt_RecklessAttack"
+data "DisplayName" "h6175915agf3c5g7ff9g6215g6b9c2eb1d337;1"
+data "Description" "h304455c4g48f5g497fg6edfgf674ab5a9c7b;1"
+data "DescriptionParams" "RegainHitPoints(10)"
+data "ExtraDescription" "hdd6934e1gc028g872dgb4adg22033cdd3a19;1"
+data "Icon" "statIcons_MAG_TemporaryHP"
+data "InterruptContext" "OnCastHit"
+data "Conditions" "IsAbleToReact(context.Observer) and Self(context.Source,context.Observer) and HasDamageEffectFlag(DamageFlags.Hit) and IsUnarmedAttack() and not AnyEntityIsItem()"
+data "Properties" "RegainHitPoints(10);RemoveStatus(SELF, MAG_SOUL_CATCHING)"
+

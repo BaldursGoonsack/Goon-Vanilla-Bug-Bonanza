@@ -1,0 +1,106 @@
+// ==================================== Slayer Form: Piercing Growl - Fix to DC using the Slayer's spellcasting ability modifier when it has none ====================================
+
+// Piercing Growl - Fix to DC using the Slayer's spellcasting ability modifier when it has none
+new entry "Zone_Slayer_DeathGrowl"
+type "SpellData"
+data "SpellType" "Zone"
+using "Zone_Slayer_DeathGrowl"
+// data "SpellRoll" "not SavingThrow(Ability.Constitution,SourceSpellDC(),AdvantageOnOrinFear())"
+data "SpellRoll" "not SavingThrow(Ability.Constitution,ManeuverSaveDC(),AdvantageOnOrinFear())"
+
+// ==================================== Slayer Form: Piercing Growl - Fix to DC using the Slayer's spellcasting ability modifier when it has none  ====================================
+
+new entry "Projectile_TerrifyingLunge_Slayer"
+type "SpellData"
+data "SpellType" "Projectile"
+// using "Projectile_Jump"
+using "Projectile_TerrifyingLunge_Slayer"
+// data "SpellRoll" "not SavingThrow(Ability.Strength, SourceSpellDC(), AdvantageOnOrinFear())"
+data "SpellRoll" "not SavingThrow(Ability.Strength, ManeuverSaveDC(), AdvantageOnOrinFear())"
+
+// ==================================== Slayer Form: Multiattack - Fix to damage not being baseline modified by strength modifier, fix to conditional damage being listed when none existed ====================================
+
+new entry "Target_Multiattack_Slayer"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_Multiattack"
+using "Target_Multiattack_Slayer"
+// data "SpellSuccess" "IF(HasStatus('BLEEDING')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier),Slashing);IF(not HasStatus('BLEEDING')):DealDamage(max(1,1d4),Slashing);Cast2[IF(HasStatus('BLEEDING')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier),Slashing);IF(not HasStatus('BLEEDING')):DealDamage(max(1,1d4),Slashing)];Cast3[IF(HasStatus('BLEEDING')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier),Slashing);IF(not HasStatus('BLEEDING')):DealDamage(max(1,1d4),Slashing)];Cast4[IF(HasStatus('BLEEDING')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier),Slashing);IF(not HasStatus('BLEEDING')):DealDamage(max(1,1d4),Slashing)]"
+data "SpellSuccess" "IF(HasStatus('BLEEDING')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier+UnarmedMeleeAbilityModifier),Slashing);IF(not HasStatus('BLEEDING')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier),Slashing);Cast2[IF(HasStatus('BLEEDING')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier+UnarmedMeleeAbilityModifier),Slashing);IF(not HasStatus('BLEEDING')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier),Slashing)];Cast3[IF(HasStatus('BLEEDING')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier+UnarmedMeleeAbilityModifier),Slashing);IF(not HasStatus('BLEEDING')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier),Slashing)];Cast4[IF(HasStatus('BLEEDING')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier+UnarmedMeleeAbilityModifier),Slashing);IF(not HasStatus('BLEEDING')):DealDamage(max(1,1d4+UnarmedMeleeAbilityModifier),Slashing)]"
+// data "DescriptionParams" "DealDamage(1d4,Slashing)"
+data "DescriptionParams" "DealDamage(1d4+UnarmedMeleeAbilityModifier,Slashing)"
+// data "TooltipDamageList" "DealDamage(1d4,Slashing);DealDamage(1d4,Slashing);DealDamage(1d4,Slashing);DealDamage(1d4,Slashing);DealDamage(4d6,Slashing,,,,ad727a13-c6f0-4b5b-aefd-aac79c6ed46e)"
+data "TooltipDamageList" "DealDamage(1d4+UnarmedMeleeAbilityModifier,Slashing);DealDamage(1d4+UnarmedMeleeAbilityModifier,Slashing);DealDamage(1d4+UnarmedMeleeAbilityModifier,Slashing);DealDamage(1d4+UnarmedMeleeAbilityModifier,Slashing)"
+
+// ==================================== Slayer Form: Sumptuous Blood Bath - Fix to DC using the Slayer's spellcasting ability modifier when it has none, fix to level 10 version not listing healing ====================================
+
+new entry "Target_BloodBath_Slayer"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_BloodBath_Slayer"
+// data "SpellRoll" "not SavingThrow(Ability.Constitution, SourceSpellDC())"
+data "SpellRoll" "not SavingThrow(Ability.Constitution, ManeuverSaveDC())"
+
+new entry "Target_BloodBath_Slayer_10"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_BloodBath_Slayer"
+using "Target_BloodBath_Slayer_10"
+// data "TooltipDamageList" "DealDamage(3d10,Slashing);"
+data "TooltipDamageList" "DealDamage(3d10+UnarmedMeleeAbilityModifier,Slashing);RegainHitPoints(4d6,1575c661-c7a1-44c7-b07d-d47b57164841)"
+
+// ==================================== Slayer Form: Slay - Fix to DC using the Slayer's spellcasting ability modifier when it has none ====================================
+
+new entry "Target_Slam_Slayer"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_UnarmedAttack"
+using "Target_Slam_Slayer"
+// data "SpellSuccess" "DealDamage(max(1,4d6+UnarmedMeleeAbilityModifier), Slashing);IF(HasStatus('BLEEDING') and not HasStatus('PRONE')):ApplyStatus(CONTAGION_FLESH_ROT_1,100,3);IF(HasStatus('BLEEDING') and HasStatus('PRONE') and not SavingThrow(Ability.Strength,SourceSpellDC())):ApplyStatus(CONTAGION_FLESH_ROT,100,-1)"
+data "SpellSuccess" "DealDamage(max(1,4d6+UnarmedMeleeAbilityModifier), Slashing);IF(HasStatus('BLEEDING') and not HasStatus('PRONE')):ApplyStatus(CONTAGION_FLESH_ROT_1,100,3);IF(HasStatus('BLEEDING') and HasStatus('PRONE') and not SavingThrow(Ability.Strength,ManeuverSaveDC())):ApplyStatus(CONTAGION_FLESH_ROT,100,-1)"
+
+new entry "Target_Slam_Slayer_10"
+type "SpellData"
+data "SpellType" "Target"
+// using "Target_Slam_Slayer"
+using "Target_Slam_Slayer_10"
+// data "SpellSuccess" "DealDamage(max(1,6d6+UnarmedMeleeAbilityModifier), Slashing); IF(HasStatus('BLEEDING') and not HasStatus('PRONE')):ApplyStatus(CONTAGION_FLESH_ROT_1,100,3);IF(HasStatus('BLEEDING') and HasStatus('PRONE') and not SavingThrow(Ability.Strength,SourceSpellDC())):ApplyStatus(CONTAGION_FLESH_ROT,100,-1)"
+data "SpellSuccess" "DealDamage(max(1,6d6+UnarmedMeleeAbilityModifier), Slashing);IF(HasStatus('BLEEDING') and not HasStatus('PRONE')):ApplyStatus(CONTAGION_FLESH_ROT_1,100,3);IF(HasStatus('BLEEDING') and HasStatus('PRONE') and not SavingThrow(Ability.Strength,ManeuverSaveDC())):ApplyStatus(CONTAGION_FLESH_ROT,100,-1)"
+
+// ==================================== Wild Shape: Panther 'Prowl' - Fix to ability not functioning after level 8, description and function fixed to be usable once per short rest/wild shape ====================================
+// (See) Invisibility Rework by drkekyll perpetuates the bug with the "RemoveConditions" in "INVISIBILITY_PANTHER"
+
+new entry "INVISIBILITY_PANTHER"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+// using "INVISIBILITY"
+using "INVISIBILITY_PANTHER"
+// data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (IsStatusEvent(StatusEvent.OnDamage) and TotalDamageDoneGreaterThan(0)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnDamage)) or not HasStatus('WILDSHAPE_PANTHER_PLAYER')"
+data "RemoveConditions" "(IsStatusEvent(StatusEvent.OnSpellCast) and not HasSpellFlag(SpellFlags.Invisible)) or (IsStatusEvent(StatusEvent.OnDamage) and TotalDamageDoneGreaterThan(0)) or (not IsStatusEvent(StatusEvent.OnSpellCast) and not IsStatusEvent(StatusEvent.OnDamage)) or (not HasStatus('WILDSHAPE_PANTHER_PLAYER') and not HasStatus('WILDSHAPE_PANTHER_PLAYER_8') and not HasStatus('WILDSHAPE_PANTHER_PLAYER_10') and not HasStatus('WILDSHAPE_PANTHER_PLAYER_12'))"
+
+new entry "Shout_Prowl_Panther"
+type "SpellData"
+data "SpellType" "Shout"
+// using "Shout_Invisibility_Myrmidon_Air"
+using "Shout_Prowl_Panther"
+// data "SpellProperties" "AI_IGNORE:ApplyStatus(INVISIBILITY_PANTHER,100,-1);AI_ONLY:ApplyStatus(INVISIBILITY_PANTHER,100,2); ApplyStatus(PROWL,100,-1);ApplyStatus(PROWL_USED,100,-1)"
+data "SpellProperties" "AI_IGNORE:ApplyStatus(INVISIBILITY_PANTHER,100,-1);AI_ONLY:ApplyStatus(INVISIBILITY_PANTHER,100,2);ApplyStatus(PROWL,100,-1)"
+// Usable once per &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt; or once per &lt;LSTag Type="Spell" Tooltip="Shout_Wildshape_Panther"&gt;Wild Shape&lt;/LSTag&gt;.
+data "ExtraDescription" "h83878dd5g08a3ge822g37f7g0aa8563198b6;1"
+
+new entry "PROWL"
+type "StatusData"
+data "StatusType" "BOOST"
+using "PROWL"
+// data "RemoveConditions" "SpellId('Target_Bite_Panther') or SpellId('Target_JugularStrike_Panther') or SpellId('Projectile_Pounce_Panther_Summon') or not HasStatus('WILDSHAPE_PANTHER_PLAYER')"
+data "RemoveConditions" "SpellId('Target_Bite_Panther') or SpellId('Target_JugularStrike_Panther') or SpellId('Projectile_Pounce_Panther_Summon') or StatusHasStatusGroup(context.StatusId, 'SG_Polymorph_BeastShape')"
+data "OnApplyFunctors" "ApplyStatus(PROWL_USED,100,-1)"
+
+new entry "PROWL_USED"
+type "StatusData"
+data "StatusType" "BOOST"
+using "PROWL_USED"
+// data "RemoveConditions" "not HasStatus('WILDSHAPE_PANTHER_PLAYER') "
+data "RemoveConditions" "StatusHasStatusGroup(context.StatusId, 'SG_Polymorph_BeastShape')"
+// data "RemoveEvents" "OnStatusApplied;OnStatusRemoved"
+data "RemoveEvents" "OnStatusRemoved"

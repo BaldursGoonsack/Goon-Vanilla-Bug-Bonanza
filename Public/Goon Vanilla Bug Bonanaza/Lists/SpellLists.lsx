@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+    <version major="4" minor="7" revision="1" build="3"/>
+    <region id="SpellLists">
+        <node id="root">
+            <children>
+                <node id="SpellList">
+                    <attribute id="Name" type="FixedString" value="Produce Flame Cantrip"/>
+                    <attribute id="Spells" type="LSString" value="Shout_ProduceFlame_Asmodeus_Tiefling"/>
+                    <attribute id="UUID" type="guid" value="a3366430-2f63-495c-be14-408d9facfd3b"/>
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

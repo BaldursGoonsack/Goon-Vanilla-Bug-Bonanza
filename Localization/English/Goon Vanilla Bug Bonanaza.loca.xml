@@ -5,8 +5,8 @@
 	<content contentuid="h0820b331g09b3ga641gf011gacbc0bc8a8e9" version="1">Justiciar's Scimitar</content>
 	<content contentuid="h15d2f24ag6b53gefefg192eg54cd208d78fa" version="1">You are considered &lt;LSTagTooltip="WeaponProficiency"&gt;Proficient&lt;/LSTag&gt; with this weapon while wielding it. </content>
 	<!--DB breath weapon descriptions-->
-	<content contentuid="h9dc131acg4f5bg4dedg9a43gaefa64ac4ae8" version="1">Spew forth a column of acid.</content>
-	<content contentuid="hc9ca24a3g15f4g4e9cgb1fcg64167e6dba3e" version="1">Spew forth a column of lightning.</content>
+	<content contentuid="h0eddb524ga29fg41e7g9678g303455f39759" version="1">Spew forth a column of acid.</content>
+	<content contentuid="h6ca2e957g948dg448dgb7cfg748bfd1293c2" version="1">Spew forth a column of lightning.</content>
 	<!--Sussur weapons-->
 	<content contentuid="hb51441aag0602g4421g8b9cg27b31a9a781c" version="1">Targets hit with this weapon must succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; or become &lt;LSTag Type="Status" Tooltip="SILENCED"&gt;Silenced&lt;/LSTag&gt; for 2 turns.</content>
 </contentList>

@@ -1,0 +1,35 @@
+// ==================================== Acid Breath - Description now states "column" instead of "cone" ====================================
+// Already fixed in "Dragonborn and Breath Weapon Enhanced" by ChizFreak
+
+new entry "Zone_BreathWeapon_Acid"
+type "SpellData"
+data "SpellType" "Zone"
+using "Zone_BreathWeapon_Acid"
+// Spew forth a cone of acid.
+// data "Description" "h416fa614gd423g4a83ga3a6g07d0ab3fe75f;4"
+// Spew forth a column of acid.
+data "Description" "h0eddb524ga29fg41e7g9678g303455f39759;1"
+
+// ==================================== Lightning Breath - Description now states "column" instead of "cone" ====================================
+// Already fixed in "Dragonborn and Breath Weapon Enhanced" by ChizFreak
+
+new entry "Zone_BreathWeapon_Lightning"
+type "SpellData"
+data "SpellType" "Zone"
+// using "Zone_BreathWeapon_Acid"
+using "Zone_BreathWeapon_Lightning"
+// Spew forth a cone of lightning.
+// data "Description" "h8341db4fgd559g4466gbf40ga233267ace44;1"
+// Spew forth a column of lightning.
+data "Description" "h6ca2e957g948dg448dgb7cfg748bfd1293c2;1"
+
+// ==================================== Fire Breath (Line) - Was improperly inheriting "Angle" from the "Zone_BreathWeapon_Fire_Cone" entry ====================================
+// Already fixed in "Dragonborn and Breath Weapon Enhanced" by ChizFreak
+
+new entry "Zone_BreathWeapon_Fire_Line"
+type "SpellData"
+data "SpellType" "Zone"
+// using "Zone_BreathWeapon_Fire_Cone"
+using "Zone_BreathWeapon_Fire_Line"
+// data "Angle" "60"
+data "Angle" ""

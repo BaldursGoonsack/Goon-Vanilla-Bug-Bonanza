@@ -1,4 +1,4 @@
-// ==================================== Boots of Speed - Fix to 'Click Heels' incorrectly giving disadvantage to the wearer's opportunity attacks (Credit to Rydiak - Item and Spell Bug Fixes - Mod.io) ====================================
+// ==================================== Boots of Speed - Fix to 'Click Heels' incorrectly giving disadvantage to the wearer's opportunity attacks ====================================
 
 new entry "CLICK_HEELS"
 type "StatusData"
@@ -7,7 +7,7 @@ using "CLICK_HEELS"
 // data "Boosts" "ActionResourceMultiplier(Movement,200,0);IF(IsReactionAttack(context.Source)):Disadvantage(AttackRoll)"
 data "Boosts" "ActionResourceMultiplier(Movement,200,0);IF(IsReactionAttack(context.Source)):Disadvantage(AttackTarget)"
 
-// ==================================== The Reviving Hands - Fix to 'Aegis Palms' not applying Death Ward to revived targets when dead (not downed) (Credit to Rydiak - Item and Spell Bug Fixes - Mod.io) ====================================
+// ==================================== The Reviving Hands - "Aegis Palms" now properly applies Death Ward upon revival ====================================
 
 new entry "MAG_Revivify_Gloves_Passive"
 type "PassiveData"
@@ -15,7 +15,7 @@ using "MAG_Revivify_Gloves_Passive"
 // data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnHeal) and Character()):ApplyStatus(BLADE_WARD,100,2);IF(context.HasContextFlag(StatsFunctorContext.OnAttack) and Character() and IsRevivifySpell()):ApplyStatus(MAG_DEATH_WARD_ON_DEAD,100,2)"
 data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnHeal) and Character()):ApplyStatus(BLADE_WARD,100,2);IF(context.HasContextFlag(StatsFunctorContext.OnAttack) and IsRevivifySpell()):ApplyStatus(MAG_DEATH_WARD_ON_DEAD,100,2)"
 
-// ==================================== After Death Do Us Part - Fix to 'Shadow Possession' clearing itself instantly upon revival (Credit to Rydiak - Item and Spell Bug Fixes - Mod.io) ====================================
+// ==================================== After Death Do Us Part - Fix to 'Shadow Possession' clearing itself instantly upon revival ====================================
 
 new entry "MAG_DEATH_DO_SHADOW_POSSESION_DOWNED"
 type "StatusData"
@@ -25,7 +25,7 @@ data "Boosts" "AbilityFailedSavingThrow(Strength);AbilityFailedSavingThrow(Dexte
 // data "OnApplyFunctors" "IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):Stabilize();RemoveStatus(RAGE);RemoveStatus(SG_Mad);IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):ApplyStatus(MAG_DEATH_DO_SHADOW_POSSESION, 100, -1)"
 data "OnApplyFunctors" "RemoveStatus(RAGE);RemoveStatus(SG_Mad);IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):Stabilize();IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):ApplyStatus(MAG_DEATH_DO_SHADOW_POSSESION, 100, -1)"
 
-// ==================================== Boots of Striding - Fix to 'Unmovable' not ever being removed when concentration was broken if the boots were unequipped (Credit to Goonsack - Goonsack Land) ====================================
+// ==================================== Boots of Striding - Fix to 'Unmovable' not ever being removed when concentration was broken if the boots were unequipped ====================================
 
 new entry "MAG_Paladin_MomentumOnConcentration_Boots"
 type "Armor"
@@ -39,7 +39,7 @@ data "StatusType" "BOOST"
 using "MAG_UNMOVABLE"
 data "Passives" "MAG_Paladin_MomentumOnConcentration_Boots_Technical_Passive"
 
-// ==================================== Gloves of Battlemage's Power - Fix to 'Battlemage's Power' not providing Arcane Acuity (Credit to Rydiak - Item and Spell Bug Fixes - Mod.io) ====================================
+// ==================================== Gloves of Battlemage's Power - Fix to 'Battlemage's Power' not providing Arcane Acuity ====================================
 // I refactored this one quite a bit, also note that multiple mods out there might have edited entries for this one, such as Death Soul, where they just slap the Arcane Acuity helmet passive on etc.
 
 // Vanilla entries
@@ -80,7 +80,7 @@ data "StackType" "Ignore"
 data "TickType" "EndTurn"
 data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 
-// ==================================== Ring of Feywild Sparks - Make the +1 Spell Save DC visible (Credit to Rydiak - Item and Spell Bug Fixes - Mod.io) ====================================
+// ==================================== Ring of Feywild Sparks - Make the +1 Spell Save DC visible ====================================
 
 new entry "MAG_OfFeywildSparks_Ring"
 type "Armor"
@@ -90,7 +90,7 @@ data "Boosts" ""
 // data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive"
 data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive;MAG_SpellSaveDC_Enchantment_Lesser_Passive"
 
-// ==================================== Cloak of the Weave - Fix to 'Absorb Elements' not functioning at all (Credit to Rydiak - Item and Spell Bug Fixes - Mod.io) ====================================
+// ==================================== Cloak of the Weave - Fix to 'Absorb Elements' not functioning at all ====================================
 
 new entry "MAG_EndGameCaster_Cloak"
 type "Armor"
@@ -98,7 +98,7 @@ using "MAG_EndGameCaster_Cloak"
 // data "PassivesOnEquip" "MAG_ArcaneEnchantment_Lesser_Passive;Absorb_Elements_Passive"
 data "PassivesOnEquip" "MAG_ArcaneEnchantment_Lesser_Passive;Absorb_Elements_Passive;Absorb_Elements_Technical_Passive;MAG_Interrupt_MAG_Interrupt_AbsorbElements_Resource_Passive"
 
-// ==================================== Shadeclinger Armour - Buff wasn't removed when item was unequipped (Credit to Cahoot - The Batman of BG3 modding) ====================================
+// ==================================== Shadeclinger Armour - Buff wasn't removed when item was unequipped ====================================
 
 new entry "MAG_Harpers_ArmorOfShadows_Passive"
 type "PassiveData"

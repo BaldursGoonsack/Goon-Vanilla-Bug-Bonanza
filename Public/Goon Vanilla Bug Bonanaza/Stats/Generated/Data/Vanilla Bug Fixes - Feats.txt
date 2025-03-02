@@ -1,4 +1,4 @@
-// ==================================== Magic Initiate: Sorcerer & Magic Initiate: Wizard - Fix to 'Shield' requiring a spell slot to use when learned via this feat (Credit to Rydiak - Item and Spell Bug Fixes - Mod.io) ====================================
+// ==================================== Magic Initiate: Sorcerer & Magic Initiate: Wizard - Fix to 'Shield' requiring a spell slot to use when learned via this feat ====================================
 // This seems way too elaborate when it can probably just use "data "Cooldown" "OncePerRest""
 // Cahoot handles this differently in "Feats Overhaul", haven't looked at it
 

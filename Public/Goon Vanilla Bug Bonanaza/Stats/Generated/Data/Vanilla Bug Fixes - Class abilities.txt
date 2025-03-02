@@ -1,4 +1,4 @@
-// ==================================== Slashing Flourish (Melee) - Fix to tooltip damage not correctly stating Bardic Inspiration bonus (Credit to zero3042 - Bard Fixes and Tweaks) ====================================
+// ==================================== Slashing Flourish (Melee) - Fix to tooltip damage not correctly stating Bardic Inspiration bonus ====================================
 
 new entry "Zone_BladeFlourish_Slashing"
 type "SpellData"
@@ -8,7 +8,7 @@ using "Zone_BladeFlourish_Slashing"
 // data "TooltipDamageList" "DealDamage(MainMeleeWeapon+1d6, MainWeaponDamageType)"
 data "TooltipDamageList" "DealDamage(MainMeleeWeapon + LevelMapValue(BardicInspiration), MainMeleeWeaponDamageType)"
 
-// ==================================== Slashing Flourish (Ranged) - Fix to target selection allowing the same target to be picked twice (Credit to Rydiak - Item and Spell Bug Fixes - Mod.io) ====================================
+// ==================================== Slashing Flourish (Ranged) - Fix to target selection allowing the same target to be picked twice ====================================
 // Is this really a bug fix, and not just a rebalance?
 
 new entry "Projectile_BladeFlourish_Slashing"
@@ -19,7 +19,7 @@ using "Projectile_BladeFlourish_Slashing"
 // data "SpellFlags" "HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold;IsHarmful"
 data "SpellFlags" "HasHighGroundRangeExtension;RangeIgnoreVerticalThreshold;IsHarmful;IgnorePreviouslyPickedEntities"
 
-// ==================================== Heart of the Storm - Fix to the effect functioning with cantrips (Credit to JuuM) ====================================
+// ==================================== Heart of the Storm - Fix to the effect functioning with cantrips ====================================
 
 new entry "Interrupt_HeartOfTheStorm_Lightning"
 type "InterruptData"
@@ -33,7 +33,7 @@ using "Interrupt_HeartOfTheStorm_Thunder"
 // data "Conditions" "Self(context.Source, context.Observer) and IsSpell() and SpellDamageTypeIs(DamageType.Thunder) and not AnyEntityIsItem()"
 data "Conditions" "Self(context.Source, context.Observer) and IsSpell() and SpellDamageTypeIs(DamageType.Thunder) and not AnyEntityIsItem() and not IsCantrip()"
 
-// ==================================== Fist of Four Thunders - Fix to spell not triggering Martial Arts: Bonus Unarmed Strike (Credit to Rydiak - Item and Spell Bug Fixes - Mod.io) ====================================
+// ==================================== Fist of Four Thunders - Fix to spell not triggering Martial Arts: Bonus Unarmed Strike ====================================
 
 new entry "Zone_Thunderwave_Monk"
 type "SpellData"
@@ -42,7 +42,7 @@ data "SpellType" "Zone"
 using "Zone_Thunderwave_Monk"
 data "SpellProperties" "ApplyStatus(SELF,MARTIAL_ARTS_BONUS_UNARMED_STRIKE,100,1)"
 
-// ==================================== Prophecy: Delivering Alms - Vanilla game references non-existant passive (Credit to Rydiak - Item and Spell Bug Fixes - Mod.io) ====================================
+// ==================================== Prophecy: Delivering Alms - Vanilla game references non-existant passive ====================================
 // Swapped to the missing vanilla entry name instead of a new custom one
 
 new entry "Divination_Ally_Downed"
@@ -53,7 +53,7 @@ data "StatsFunctorContext" "OnCast"
 data "Conditions" "SpellId('Target_Help') and Ally(context.Target)"
 data "StatsFunctors" "ApplyStatus(SELF,PORTENT,100,1);RemoveStatus(SELF,DIVINATION_ALLY_HELP)"
 
-// ==================================== Primal Stampede - Fix to damage type not matching and benefiting from attack type (Melee Unarmed) (Credit to Rydiak - Item and Spell Bug Fixes - Mod.io) ====================================
+// ==================================== Primal Stampede - Fix to damage type not matching and benefiting from attack type (Melee Unarmed) ====================================
 
 new entry "Rush_Primal_Stampede"
 type "SpellData"

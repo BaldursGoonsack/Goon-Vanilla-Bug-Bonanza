@@ -84,7 +84,7 @@ function RecastSpellDC(abilities, fallbackDC, entity)
     return spellDC
 end
 
---Recasted Telekinesis fix
+-- Recast Telekinesis
 function RecastTelekinesisCheck()
     local result = Dead() | Item() | Ally()
     if not result.Result then

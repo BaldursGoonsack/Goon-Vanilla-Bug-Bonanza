@@ -38,7 +38,7 @@ data "BoostContext" "OnAttack"
 // data "Boosts" "IF(AttackedWithPassiveSourceWeapon() and not HasObscuredState(ObscuredState.Clear)):Advantage(AttackRoll)"
 data "Boosts" "IF(IsMeleeWeaponAttack() and not HasObscuredState(ObscuredState.Clear)):Advantage(AttackRoll)"
 
-// ==================================== Hellfire Greataxe - Fix to 'Hellflame Cleave' and 'Hellfire' surface not ignoring fire resistance ====================================
+// ==================================== Hellfire Greataxe - Fix to "Hellflame Cleave" and "Hellfire" surface not ignoring fire resistance ====================================
 
 new entry "Zone_MAG_Automaton_Human_Steelwatcher_HellfireCleave"
 type "SpellData"

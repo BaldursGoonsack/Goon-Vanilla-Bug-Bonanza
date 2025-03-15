@@ -67,7 +67,7 @@ using "Target_Slam_Slayer_10"
 // data "SpellSuccess" "DealDamage(max(1,6d6+UnarmedMeleeAbilityModifier), Slashing); IF(HasStatus('BLEEDING') and not HasStatus('PRONE')):ApplyStatus(CONTAGION_FLESH_ROT_1,100,3);IF(HasStatus('BLEEDING') and HasStatus('PRONE') and not SavingThrow(Ability.Strength,SourceSpellDC())):ApplyStatus(CONTAGION_FLESH_ROT,100,-1)"
 data "SpellSuccess" "DealDamage(max(1,6d6+UnarmedMeleeAbilityModifier), Slashing);IF(HasStatus('BLEEDING') and not HasStatus('PRONE')):ApplyStatus(CONTAGION_FLESH_ROT_1,100,3);IF(HasStatus('BLEEDING') and HasStatus('PRONE') and not SavingThrow(Ability.Strength,ManeuverSaveDC())):ApplyStatus(CONTAGION_FLESH_ROT,100,-1)"
 
-// ==================================== Wild Shape: Panther 'Prowl' - Fix to ability not functioning after level 8, description and function fixed to be usable once per short rest/wild shape ====================================
+// ==================================== Wild Shape: Panther's Prowl - Fix to ability not functioning after level 8, description and function fixed to be usable once per short rest/wild shape ====================================
 // (See) Invisibility Rework by drkekyll perpetuates the bug with the "RemoveConditions" in "INVISIBILITY_PANTHER"
 
 new entry "INVISIBILITY_PANTHER"
@@ -86,7 +86,7 @@ using "Shout_Prowl_Panther"
 // data "SpellProperties" "AI_IGNORE:ApplyStatus(INVISIBILITY_PANTHER,100,-1);AI_ONLY:ApplyStatus(INVISIBILITY_PANTHER,100,2); ApplyStatus(PROWL,100,-1);ApplyStatus(PROWL_USED,100,-1)"
 data "SpellProperties" "AI_IGNORE:ApplyStatus(INVISIBILITY_PANTHER,100,-1);AI_ONLY:ApplyStatus(INVISIBILITY_PANTHER,100,2);ApplyStatus(PROWL,100,-1)"
 // Usable once per &lt;LSTag Tooltip="ShortRest"&gt;Short Rest&lt;/LSTag&gt; or once per &lt;LSTag Type="Spell" Tooltip="Shout_Wildshape_Panther"&gt;Wild Shape&lt;/LSTag&gt;.
-data "ExtraDescription" "h83878dd5g08a3ge822g37f7g0aa8563198b6;1"
+data "ExtraDescription" "h1cc5d359gf11bg458ag9a27gd46a21b9f9a4;1"
 
 new entry "PROWL"
 type "StatusData"

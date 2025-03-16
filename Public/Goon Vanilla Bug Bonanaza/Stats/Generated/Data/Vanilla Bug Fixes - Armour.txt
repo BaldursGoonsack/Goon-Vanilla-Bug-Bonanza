@@ -1,4 +1,47 @@
-// ==================================== Boots of Speed - Fix to 'Click Heels' incorrectly giving disadvantage to the wearer's opportunity attacks ====================================
+// ==================================== Gloves of Battlemage's Power - Battlemage's Power now applies Arcane Acuity ====================================
+// Death Soul - Sorcerer Subclass by Zeysir includes a hacky fix for this, and it's probably not the only one
+
+// Vanilla entries
+new entry "MAG_Gish_ArcaneAcuity_Gloves"
+type "Armor"
+using "MAG_Gish_ArcaneAcuity_Gloves"
+// data "PassivesOnEquip" "MAG_Gish_ArcaneAcuity_Gloves_Passive"
+data "PassivesOnEquip" "MAG_Gish_ArcaneAcuity_Gloves_Passive;Goon_ArcaneAcuity_Gloves_Technical_Passive"
+
+new entry "MAG_Gish_ArcaneAcuity_Gloves_Passive"
+type "PassiveData"
+using "MAG_Gish_ArcaneAcuity_Gloves_Passive"
+// data "StatsFunctorContext" "OnStatusApply"
+data "StatsFunctorContext" "OnStatusApplied"
+data "Conditions" "HasStatus('ArcaneAcuity_Gloves_OnAttack_Technical') and HasStatus('ArcaneAcuity_Gloves_OnStatus_Technical')"
+// data "StatsFunctors" "IF(IsWeaponAttack()):ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY, 100, 2);IF(IsWeaponAttack()):ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL, 100, 1)"
+data "StatsFunctors" "ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY, 100, 2);ApplyStatus(SELF, MAG_GISH_ARCANE_ACUITY_DURATION_TECHNICAL, 100, 1);RemoveStatus(GOON_ARCANEACUITY_GLOVES_ONATTACK_TECHNICAL);RemoveStatus(GOON_ARCANEACUITY_GLOVES_ONSTATUS_TECHNICAL)"
+
+// Custom entries
+new entry "Goon_ArcaneAcuity_Gloves_Technical_Passive"
+type "PassiveData"
+data "Properties" "IsHidden;OncePerAttack"
+data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnAttack)):ApplyStatus(SELF,GOON_ARCANEACUITY_GLOVES_ONATTACK_TECHNICAL,100,1);IF(context.HasContextFlag(StatsFunctorContext.OnStatusApply)):ApplyStatus(SELF,GOON_ARCANEACUITY_GLOVES_ONSTATUS_TECHNICAL,100,1)"
+data "StatsFunctorContext" "OnAttack;OnStatusApply"
+data "Conditions" "(context.HasContextFlag(StatsFunctorContext.OnAttack) and IsWeaponAttack()) or (context.HasContextFlag(StatsFunctorContext.OnStatusApply) and not Self() and not StatusDoesNotInvokeOnStatusApply())"
+
+new entry "GOON_ARCANEACUITY_GLOVES_ONATTACK_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "h523e0454g6b73gb985g37bbgdc61a1118438;1"
+data "StackType" "Ignore"
+data "TickType" "EndTurn"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+new entry "GOON_ARCANEACUITY_GLOVES_ONSTATUS_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "hd8cfd152g848cgfb39g8bd4gb36d2b6958c9;1"
+data "StackType" "Ignore"
+data "TickType" "EndTurn"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+// ==================================== Boots of Speed - Click Heels no longer gives the wearer Disadvantage on their attack, and instead attackers recieve Disadvantage as intended ====================================
 
 new entry "CLICK_HEELS"
 type "StatusData"
@@ -7,7 +50,7 @@ using "CLICK_HEELS"
 // data "Boosts" "ActionResourceMultiplier(Movement,200,0);IF(IsReactionAttack(context.Source)):Disadvantage(AttackRoll)"
 data "Boosts" "ActionResourceMultiplier(Movement,200,0);IF(IsReactionAttack(context.Source)):Disadvantage(AttackTarget)"
 
-// ==================================== The Reviving Hands - "Aegis Palms" now properly applies Death Ward upon revival ====================================
+// ==================================== The Reviving Hands - Aegis Palms now properly applies Death Ward upon the revived target ====================================
 
 new entry "MAG_Revivify_Gloves_Passive"
 type "PassiveData"
@@ -15,7 +58,7 @@ using "MAG_Revivify_Gloves_Passive"
 // data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnHeal) and Character()):ApplyStatus(BLADE_WARD,100,2);IF(context.HasContextFlag(StatsFunctorContext.OnAttack) and Character() and IsRevivifySpell()):ApplyStatus(MAG_DEATH_WARD_ON_DEAD,100,2)"
 data "StatsFunctors" "IF(context.HasContextFlag(StatsFunctorContext.OnHeal) and Character()):ApplyStatus(BLADE_WARD,100,2);IF(context.HasContextFlag(StatsFunctorContext.OnAttack) and IsRevivifySpell()):ApplyStatus(MAG_DEATH_WARD_ON_DEAD,100,2)"
 
-// ==================================== After Death Do Us Part - Fix to 'Shadow Possession' clearing itself instantly upon revival ====================================
+// ==================================== After Death Do Us Part - Shadow Possession no longer clears itself instantly upon revival ====================================
 
 new entry "MAG_DEATH_DO_SHADOW_POSSESION_DOWNED"
 type "StatusData"
@@ -25,7 +68,7 @@ data "Boosts" "AbilityFailedSavingThrow(Strength);AbilityFailedSavingThrow(Dexte
 // data "OnApplyFunctors" "IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):Stabilize();RemoveStatus(RAGE);RemoveStatus(SG_Mad);IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):ApplyStatus(MAG_DEATH_DO_SHADOW_POSSESION, 100, -1)"
 data "OnApplyFunctors" "RemoveStatus(RAGE);RemoveStatus(SG_Mad);IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):Stabilize();IF(HasStatus('MAG_DEATH_DO_SHADOW_POSSESION_DOWNED_OVERRIDE')):ApplyStatus(MAG_DEATH_DO_SHADOW_POSSESION, 100, -1)"
 
-// ==================================== Boots of Striding - Fix to 'Unmovable' not ever being removed when concentration was broken if the boots were unequipped ====================================
+// ==================================== Boots of Striding - Unmovable will be removed if both the item is unequipped and the wearer (or previous wearer with the buff) is no longer concentrating ====================================
 
 new entry "MAG_Paladin_MomentumOnConcentration_Boots"
 type "Armor"
@@ -49,7 +92,7 @@ data "Boosts" ""
 // data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive"
 data "PassivesOnEquip" "MAG_FeyWildSpark_WildMagic_Passive;MAG_SpellSaveDC_Enchantment_Lesser_Passive"
 
-// ==================================== Cloak of the Weave - Fix to 'Absorb Elements' not functioning at all ====================================
+// ==================================== Cloak of the Weave - Make Absorb Elements functional ====================================
 
 new entry "MAG_EndGameCaster_Cloak"
 type "Armor"
@@ -57,7 +100,7 @@ using "MAG_EndGameCaster_Cloak"
 // data "PassivesOnEquip" "MAG_ArcaneEnchantment_Lesser_Passive;Absorb_Elements_Passive"
 data "PassivesOnEquip" "MAG_ArcaneEnchantment_Lesser_Passive;Absorb_Elements_Passive;Absorb_Elements_Technical_Passive;MAG_Interrupt_MAG_Interrupt_AbsorbElements_Resource_Passive"
 
-// ==================================== Shadeclinger Armour - Buff wasn't removed when item was unequipped ====================================
+// ==================================== Shadeclinger Armour - Advantage to Saving Throws buff is now removed when item is unequipped ====================================
 
 new entry "MAG_Harpers_ArmorOfShadows_Passive"
 type "PassiveData"

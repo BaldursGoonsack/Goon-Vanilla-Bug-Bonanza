@@ -1,5 +1,4 @@
 // ==================================== Counterspell - Synergy with Abjuration Wizard's "Arcane Ward" based on the spell slot level used / Uses spellcasting modifier instead of Intelligence ====================================
-// Dependant upon the "JuuM_GetHighestAbility" khonsu function
 
 new entry "Interrupt_Counterspell_4"
 type "InterruptData"
